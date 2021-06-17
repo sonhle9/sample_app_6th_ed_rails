@@ -19,6 +19,7 @@ json.microposts do
     json.id m.id
     json.user_id m.user_id
     json.content m.content
+    json.image "#{request.ssl? ? 'https' : 'http'}://#{request.env['HTTP_HOST']}"+url_for(m.display_image) if m.image.attached?
     json.timestamp time_ago_in_words(m.created_at)
   end
 end
