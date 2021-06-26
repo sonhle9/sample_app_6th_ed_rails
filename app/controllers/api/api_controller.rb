@@ -1,15 +1,7 @@
 class Api::ApiController < ActionController::Base
-  # skip_before_action :verify_authenticity_token
-  before_action :set_csrf_cookie
-  include ActionController::Cookies
-  include ActionController::RequestForgeryProtection
-
-  protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token
   include SessionsHelper
   private
-    def set_csrf_cookie
-      cookies["CSRF-TOKEN"] = form_authenticity_token
-    end
     def encode_token(payload)
       JWT.encode(payload, 'my_secret')
     end

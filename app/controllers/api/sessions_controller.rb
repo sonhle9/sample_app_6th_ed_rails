@@ -28,7 +28,7 @@ class Api::SessionsController < Api::ApiController
     end
   end
   def destroy
-    log_out if logged_in?
+    log_out if jwt_logged_in?
     head :ok
   end
 end
