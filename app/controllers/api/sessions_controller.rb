@@ -12,8 +12,11 @@ class Api::SessionsController < Api::ApiController
       if user.activated?
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        payload = {user_id: user.id}
+        token = encode_token(payload)
         render json: {
-          user: user
+          user: user,
+          jwt: token
         }
       else
         message  = "Account not activated. "

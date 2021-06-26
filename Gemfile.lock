@@ -133,6 +133,7 @@ GEM
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
+    jwt (2.2.3)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -299,6 +300,7 @@ DEPENDENCIES
   guard-minitest (= 2.4.6)
   image_processing (= 1.9.3)
   jbuilder (= 2.10.0)
+  jwt
   kaminari
   kaminari-bootstrap
   listen (= 3.4.1)
